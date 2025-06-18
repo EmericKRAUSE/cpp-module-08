@@ -13,11 +13,11 @@ class NotInContainer : public std::exception
 };
 
 template <typename T>
-typename T::value_type	easyfind(const T& container, int toSearch)
+typename T::const_iterator	easyfind(const T& container, int toSearch)
 {
 	typename T::const_iterator it;
 	it = std::find(container.begin(), container.end(), toSearch);
 	if (it == container.end())
 		throw NotInContainer();
-	return (*it);
+	return (it);
 }

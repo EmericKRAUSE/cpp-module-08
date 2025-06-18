@@ -36,7 +36,7 @@ void	printContainer(const T &container, int toSearch)
 
 int main()
 {
-	int	lookingFor = 99;
+	int	lookingFor = 0;
 	std::vector<int> numbers;
 	//std::deque<int> numbers;
 
@@ -48,10 +48,8 @@ int main()
 				<< lookingFor << std::endl;
 	try
 	{
-		int	value;
-		value = easyfind(numbers, 99);
-		std::cout	<< GRN << "Element found: " << RESET 
-					<< value << std::endl;
+		std::cout	<< CYN << "Result: " << RESET
+					<< *easyfind(numbers, lookingFor) << std::endl;
 	}
 	catch(const std::exception& e)
 	{
