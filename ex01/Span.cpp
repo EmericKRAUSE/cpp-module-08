@@ -13,9 +13,26 @@ Span::Span(unsigned int size)
 
 }
 
+Span::Span(const Span& obj)
+{
+	*this = obj;
+}
+
 Span::~Span()
 {
 
+}
+
+//	####################
+//	Overload operator
+Span& Span::operator=(const Span &obj)
+{
+	if (this != &obj)
+	{
+		this->_size = obj._size;
+		this->_numbers = obj._numbers;
+	}
+	return (*this);
 }
 
 //	####################
@@ -56,4 +73,11 @@ int Span::longestSpan()
 	min = std::min_element(this->_numbers.begin(), this->_numbers.end());
 	max = std::max_element(this->_numbers.begin(), this->_numbers.end());
 	return (*max - *min);
+}
+
+int Span::getNumber(unsigned int n) const
+{
+	if (n >= this->_size)
+		throw std::overflow_error("Index is out of bounds");
+	return (this->_numbers[n]);
 }

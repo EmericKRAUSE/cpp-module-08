@@ -14,7 +14,7 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) span_file vector_file
 
 re: fclean all
 
