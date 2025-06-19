@@ -75,7 +75,7 @@ int main()
 			for (unsigned long i = 0; i < 100; i++)
 				std::cout << sp.getNumber(i) << std::endl;
 
-			std::cout	<< CYN << "shortes and longest span:" << RESET
+			std::cout	<< CYN << "shortest and longest span:" << RESET
 					  	<< std::endl;
 			std::cout << sp.shortestSpan() << std::endl;
 			std::cout << sp.longestSpan() << std::endl;
