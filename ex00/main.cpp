@@ -9,7 +9,7 @@
 template <typename T>
 void	initContainer(T& container, int size)
 {
-	if (size > 100)
+	if (size > 100 || size < 1)
 		size = 100;
 	for (int i = 0; i < size; i++)
 	{
